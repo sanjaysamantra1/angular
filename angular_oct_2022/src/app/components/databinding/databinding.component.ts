@@ -5,7 +5,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   templateUrl: './databinding.component.html',
   styles: ['img{border:5px solid blue;}'],
   styleUrls: ['./databinding.component.css', './databinding2.component.css'],
-  encapsulation: ViewEncapsulation.Emulated, 
+  encapsulation: ViewEncapsulation.Emulated,
   // accept-incoming css from index.html & my css should be applied to others
 })
 export class DatabindingComponent implements OnInit {
@@ -13,11 +13,11 @@ export class DatabindingComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  name = 'Sachin Tendulkar';
+  name: string = 'Sachin Tendulkar';
   img_url =
     'https://m.cricbuzz.com/a/img/v1/192x192/i1/c171004/sachin-tendulkar.jpg';
 
-  flag = true;
+  flag: boolean = true;
   f1() {
     alert('I am f1');
   }

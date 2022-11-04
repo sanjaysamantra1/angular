@@ -12,6 +12,7 @@ import { LoginModule } from 'src/login/login.module';
 import { DatabindingComponent } from './components/databinding/databinding.component';
 import { FormsModule } from '@angular/forms';
 import { DatabindingChildComponent } from './components/databinding-child/databinding-child.component';
+import { DirectivesComponent } from './components/directives/directives.component';
 
 @NgModule({
   // components , directives , pipes
@@ -24,6 +25,7 @@ import { DatabindingChildComponent } from './components/databinding-child/databi
     CenterComponent,
     DatabindingComponent,
     DatabindingChildComponent,
+    DirectivesComponent,
   ],
   // dependent modules
   imports: [BrowserModule, AppRoutingModule, LoginModule, FormsModule],
