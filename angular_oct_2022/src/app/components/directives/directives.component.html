@@ -44,19 +44,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td *ngIf="employees.length == 0; else tableData">No Data Found</td>
-    </tr>
+    <ng-container *ngIf="employees.length == 0; else tableData">
+      <tr>
+        <td colspan="5" class="text-center">No Data Found</td>
+      </tr>
+    </ng-container>
     <ng-template #tableData>
-      <div *ngFor="let emp of employees; let i = index">
+      <tr *ngFor="let emp of employees; let i = index">
         <td>{{ i + 1 }}</td>
-        <td>{{ emp?.eId }}</td>
-        <td>{{ emp?.name }}</td>
-        <td>{{ emp?.sal }}</td>
-        <td>{{ emp?.gender }}</td>
-      </div>
+        <td>{{ emp.eId }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.sal }}</td>
+        <td>{{ emp["gender"] }}</td>
+      </tr>
     </ng-template>
   </tbody>
 </table>
 
-<h1>{{employees.length}}</h1>

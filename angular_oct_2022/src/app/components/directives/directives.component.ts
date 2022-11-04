@@ -20,7 +20,7 @@ export class DirectivesComponent implements OnInit {
     { name: 'Utter Pradesh', val: 'UP' },
   ];
 
-  employees = [
+  employees: any[] = [
     { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
     { eId: 104, name: 'geeta', sal: 8000, gender: 'female' },
     { eId: 103, name: 'ranjan', sal: 7000, gender: 'female' },
