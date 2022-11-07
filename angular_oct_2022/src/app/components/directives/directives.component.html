@@ -11,6 +11,25 @@
 </ng-template>
 <hr />
 
+<h2 [style.color]="num % 2 == 0 ? 'blue' : 'red'">
+  {{ num }} is {{ num % 2 == 0 ? "even" : "odd" }}
+</h2>
+<div
+  [ngStyle]="
+    num % 2 == 0
+      ? { color: 'blue', background: 'red' }
+      : { color: 'red', background: 'blue' }
+  "
+>
+  {{ num }} is {{ num % 2 == 0 ? "even" : "odd" }}
+</div>
+<button
+  class="btn btn-lg"
+  [ngClass]="num % 2 == 0 ? 'btn-success' : 'btn-danger'"
+>
+  {{ num % 2 == 0 ? "even" : "odd" }}
+</button>
+
 <p>Please Change Day Nmber: <input type="number" [(ngModel)]="dayNum" /></p>
 <div [ngSwitch]="dayNum">
   <p *ngSwitchCase="1">Today is Monday</p>
@@ -41,6 +60,10 @@
       <th>Name</th>
       <th>Salary</th>
       <th>Gender</th>
+      <th>isFirst</th>
+      <th>isLast</th>
+      <th>is Even</th>
+      <th>is Odd</th>
     </tr>
   </thead>
   <tbody>
@@ -50,14 +73,34 @@
       </tr>
     </ng-container>
     <ng-template #tableData>
-      <tr *ngFor="let emp of employees; let i = index">
+      <tr
+        *ngFor="
+          let emp of employees;
+          let i = index;
+          let f = first;
+          let l = last;
+          let e = even;
+          let o = odd;
+          trackBy: trackByempId
+        "
+      >
         <td>{{ i + 1 }}</td>
         <td>{{ emp.eId }}</td>
         <td>{{ emp.name }}</td>
         <td>{{ emp.sal }}</td>
         <td>{{ emp["gender"] }}</td>
+        <td>{{ f }}</td>
+        <td>{{ l }}</td>
+        <td>{{ e }}</td>
+        <td>{{ o }}</td>
       </tr>
     </ng-template>
   </tbody>
 </table>
 
+<button class="btn btn-primary" (click)="addNewEmployee()">
+  Add New Employee
+</button>
+<button class="btn btn-secondary" (click)="employees[0].sal = 5500">
+  change a field
+</button>
