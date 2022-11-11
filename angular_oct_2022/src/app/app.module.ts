@@ -16,6 +16,14 @@ import { FormsModule } from '@angular/forms';
 import { DatabindingChildComponent } from './components/databinding-child/databinding-child.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { ProductsComponent } from './components/products/products.component';
+import { NumberonlyDirective } from './directives/numberonly.directive';
+import { HighlightDirective } from './directives/highlight.directive';
+import { CountDirective } from './directives/count.directive';
+import { ModalComponent } from './components/modal/modal.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { RemainingPipe } from './custom_pipes/remaining.pipe';
+import { OrdinalPipe } from './custom_pipes/ordinal.pipe';
+import { MySortPipe } from './custom_pipes/my-sort.pipe';
 
 @NgModule({
   // components , directives , pipes
@@ -30,6 +38,14 @@ import { ProductsComponent } from './components/products/products.component';
     DatabindingChildComponent,
     DirectivesComponent,
     ProductsComponent,
+    NumberonlyDirective,
+    HighlightDirective,
+    CountDirective,
+    ModalComponent,
+    PipesComponent,
+    RemainingPipe,
+    OrdinalPipe,
+    MySortPipe,
   ],
   // dependent modules
   imports: [

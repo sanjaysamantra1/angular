@@ -1,8 +1,8 @@
-<p>directives works!</p>
+<p appHighlight>directives works!</p>
 
 <p>Please enter Num value: <input type="number" [(ngModel)]="num" /></p>
 
-<div *ngIf="num % 2 == 0">{{ num }} is Even</div>
+<div *ngIf="num % 2 == 0" appHighlight>{{ num }} is Even</div>
 <div *ngIf="num % 2 !== 0">{{ num }} is Odd</div>
 
 <div *ngIf="num % 2 == 0; else oddContent">{{ num }} is Even</div>
@@ -14,19 +14,14 @@
 <h2 [style.color]="num % 2 == 0 ? 'blue' : 'red'">
   {{ num }} is {{ num % 2 == 0 ? "even" : "odd" }}
 </h2>
-<div
-  [ngStyle]="
+<div [ngStyle]="
     num % 2 == 0
       ? { color: 'blue', background: 'red' }
       : { color: 'red', background: 'blue' }
-  "
->
+  ">
   {{ num }} is {{ num % 2 == 0 ? "even" : "odd" }}
 </div>
-<button
-  class="btn btn-lg"
-  [ngClass]="num % 2 == 0 ? 'btn-success' : 'btn-danger'"
->
+<button class="btn btn-lg" [ngClass]="num % 2 == 0 ? 'btn-success' : 'btn-danger'">
   {{ num % 2 == 0 ? "even" : "odd" }}
 </button>
 
@@ -73,8 +68,7 @@
       </tr>
     </ng-container>
     <ng-template #tableData>
-      <tr
-        *ngFor="
+      <tr *ngFor="
           let emp of employees;
           let i = index;
           let f = first;
@@ -82,8 +76,7 @@
           let e = even;
           let o = odd;
           trackBy: trackByempId
-        "
-      >
+        ">
         <td>{{ i + 1 }}</td>
         <td>{{ emp.eId }}</td>
         <td>{{ emp.name }}</td>
@@ -104,3 +97,10 @@
 <button class="btn btn-secondary" (click)="employees[0].sal = 5500">
   change a field
 </button>
+<hr />
+<input numberonly />
+<p appHighlight>This is a paragraph, it uses highlight directive</p>
+<button counting>btn 1</button>
+<button counting>btn 2</button>
+
+<button (click)="openAlert()">sweet alert</button>

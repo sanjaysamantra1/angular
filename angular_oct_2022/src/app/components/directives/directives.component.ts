@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-directives',
@@ -38,6 +39,10 @@ export class DirectivesComponent implements OnInit {
   }
   trackByempId(emp: any) {
     return emp.eId;
+  }
+
+  openAlert() {
+    Swal.fire('Good job!', 'You clicked the button!', 'success');
   }
 
   constructor() {}
