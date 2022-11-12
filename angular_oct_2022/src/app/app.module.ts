@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -24,6 +24,9 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { RemainingPipe } from './custom_pipes/remaining.pipe';
 import { OrdinalPipe } from './custom_pipes/ordinal.pipe';
 import { MySortPipe } from './custom_pipes/my-sort.pipe';
+import { ParentComponent } from './components/parent/parent.component';
+import { Child1Component } from './components/child1/child1.component';
+import { Child2Component } from './components/child2/child2.component';
 
 @NgModule({
   // components , directives , pipes
@@ -46,6 +49,9 @@ import { MySortPipe } from './custom_pipes/my-sort.pipe';
     RemainingPipe,
     OrdinalPipe,
     MySortPipe,
+    ParentComponent,
+    Child1Component,
+    Child2Component,
   ],
   // dependent modules
   imports: [

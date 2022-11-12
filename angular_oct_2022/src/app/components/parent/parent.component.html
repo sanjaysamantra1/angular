@@ -1,0 +1,14 @@
+<div class="parent container">
+    <div class="row">
+        <div>This is parent component</div>
+        <div>my own data a is- {{a}}</div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <app-child1 [aChild]="a" [name]="child2.name"></app-child1>
+        </div>
+        <div class="col">
+            <app-child2 [a]="a" [f1]="f1" #child2></app-child2>
+        </div>
+    </div>
+</div>
