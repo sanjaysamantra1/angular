@@ -6,6 +6,7 @@ import { Component, OnInit, SimpleChanges } from '@angular/core';
   styleUrls: ['./parent.component.css'],
 })
 export class ParentComponent implements OnInit {
+  arr = [10, 20, 30];
   a: number = 10;
   myName: string = '';
   f1 = function () {
@@ -25,7 +26,7 @@ export class ParentComponent implements OnInit {
     console.log('Parent ngOnChanges');
     console.log(changes);
   }
-  ngDoCheck(){
+  ngDoCheck() {
     console.log('Parent ngDoCheck');
   }
 }

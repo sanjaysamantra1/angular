@@ -27,6 +27,11 @@ import { MySortPipe } from './custom_pipes/my-sort.pipe';
 import { ParentComponent } from './components/parent/parent.component';
 import { Child1Component } from './components/child1/child1.component';
 import { Child2Component } from './components/child2/child2.component';
+import { UsersComponent } from './components/users/users.component';
+import { UsersService } from './services/users.service';
+import { Emp1Component } from './components/emp1/emp1.component';
+import { Emp2Component } from './components/emp2/emp2.component';
+import { Emp3Component } from './components/emp3/emp3.component';
 
 @NgModule({
   // components , directives , pipes
@@ -52,6 +57,10 @@ import { Child2Component } from './components/child2/child2.component';
     ParentComponent,
     Child1Component,
     Child2Component,
+    UsersComponent,
+    Emp1Component,
+    Emp2Component,
+    Emp3Component,
   ],
   // dependent modules
   imports: [
@@ -63,7 +72,7 @@ import { Child2Component } from './components/child2/child2.component';
     Ng2SearchPipeModule,
   ],
   // services / injectables
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent], // Which Comp To Load = AppComponent
 })
 export class AppModule {}
