@@ -2,6 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,9 @@ import { UsersService } from './services/users.service';
 import { Emp1Component } from './components/emp1/emp1.component';
 import { Emp2Component } from './components/emp2/emp2.component';
 import { Emp3Component } from './components/emp3/emp3.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { TodosComponent } from './components/todos/todos.component';
 
 @NgModule({
   // components , directives , pipes
@@ -61,6 +65,9 @@ import { Emp3Component } from './components/emp3/emp3.component';
     Emp1Component,
     Emp2Component,
     Emp3Component,
+    CommentsComponent,
+    EmployeesComponent,
+    TodosComponent,
   ],
   // dependent modules
   imports: [
@@ -70,6 +77,7 @@ import { Emp3Component } from './components/emp3/emp3.component';
     FormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
+    HttpClientModule,
   ],
   // services / injectables
   providers: [UsersService],
