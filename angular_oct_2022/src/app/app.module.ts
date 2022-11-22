@@ -2,7 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +36,11 @@ import { Emp3Component } from './components/emp3/emp3.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { MyInterceptor1 } from './interceptor1.service';
+import { RetryService } from './retry.service';
+import { ObservableDemo1Component } from './observable-demo1/observable-demo1.component';
+import { ObservableDemo2Component } from './observable-demo2/observable-demo2.component';
+import { ForkJoinDemoComponent } from './components/fork-join-demo/fork-join-demo.component';
 
 @NgModule({
   // components , directives , pipes
@@ -68,6 +73,9 @@ import { TodosComponent } from './components/todos/todos.component';
     CommentsComponent,
     EmployeesComponent,
     TodosComponent,
+    ObservableDemo1Component,
+    ObservableDemo2Component,
+    ForkJoinDemoComponent,
   ],
   // dependent modules
   imports: [
@@ -80,7 +88,11 @@ import { TodosComponent } from './components/todos/todos.component';
     HttpClientModule,
   ],
   // services / injectables
-  providers: [UsersService],
+  providers: [
+    UsersService,
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor1, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: RetryService, multi: true },
+  ],
   bootstrap: [AppComponent], // Which Comp To Load = AppComponent
 })
 export class AppModule {}
