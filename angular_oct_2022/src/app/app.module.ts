@@ -41,6 +41,11 @@ import { RetryService } from './retry.service';
 import { ObservableDemo1Component } from './observable-demo1/observable-demo1.component';
 import { ObservableDemo2Component } from './observable-demo2/observable-demo2.component';
 import { ForkJoinDemoComponent } from './components/fork-join-demo/fork-join-demo.component';
+import { MergemapDemoComponent } from './components/mergemap-demo/mergemap-demo.component';
+import { ObservableDemo3Component } from './components/observable-demo3/observable-demo3.component';
+import { SubjectsDemoComponent } from './components/subjects-demo/subjects-demo.component';
+import { MessageListComponent } from './components/message-list/message-list.component';
+import { MessageAddComponent } from './components/message-add/message-add.component';
 
 @NgModule({
   // components , directives , pipes
@@ -76,6 +81,11 @@ import { ForkJoinDemoComponent } from './components/fork-join-demo/fork-join-dem
     ObservableDemo1Component,
     ObservableDemo2Component,
     ForkJoinDemoComponent,
+    MergemapDemoComponent,
+    ObservableDemo3Component,
+    SubjectsDemoComponent,
+    MessageListComponent,
+    MessageAddComponent,
   ],
   // dependent modules
   imports: [
