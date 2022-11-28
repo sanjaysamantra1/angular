@@ -13,7 +13,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CenterComponent } from './components/center/center.component';
 import { LoginModule } from 'src/login/login.module';
 import { DatabindingComponent } from './components/databinding/databinding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DatabindingChildComponent } from './components/databinding-child/databinding-child.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -46,6 +46,11 @@ import { ObservableDemo3Component } from './components/observable-demo3/observab
 import { SubjectsDemoComponent } from './components/subjects-demo/subjects-demo.component';
 import { MessageListComponent } from './components/message-list/message-list.component';
 import { MessageAddComponent } from './components/message-add/message-add.component';
+import { FormDemo1Component } from './components/form-demo1/form-demo1.component';
+import { FormDemo2Component } from './components/form-demo2/form-demo2.component';
+import { FormDemo3Component } from './components/form-demo3/form-demo3.component';
+import { FormDemo4Component } from './components/form-demo4/form-demo4.component';
+import { FormDemo5Component } from './components/form-demo5/form-demo5.component';
 
 @NgModule({
   // components , directives , pipes
@@ -86,6 +91,11 @@ import { MessageAddComponent } from './components/message-add/message-add.compon
     SubjectsDemoComponent,
     MessageListComponent,
     MessageAddComponent,
+    FormDemo1Component,
+    FormDemo2Component,
+    FormDemo3Component,
+    FormDemo4Component,
+    FormDemo5Component,
   ],
   // dependent modules
   imports: [
@@ -96,6 +106,7 @@ import { MessageAddComponent } from './components/message-add/message-add.compon
     NgxPaginationModule,
     Ng2SearchPipeModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   // services / injectables
   providers: [
